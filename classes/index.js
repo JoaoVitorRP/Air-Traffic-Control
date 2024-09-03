@@ -1,3 +1,6 @@
-export * from "./Pilot.js"; //Piloto, ServicoPilotos
-export * from "./Aircraft.js"; //Aeronave, AeronaveParticular, AeronavePassageiros, AeronaveCarga, ServicoAeronaves
-export * from "./Airway.js"; //Aerovia, ServicoAerovia
+export * from "./Piloto.js"; //Piloto, ServicoPilotos
+export * from "./ServicoPilotos.js"; //ServicoPilotos
+export * from "./Aeronave.js"; //Aeronave, AeronaveParticular, AeronavePassageiros, AeronaveCarga
+export * from "./ServicoAeronaves.js"; //ServicoAeronaves
+export * from "./Aerovia.js"; //Aerovia
+export * from "./ServicoAerovias.js"; //ServicoAerovias
