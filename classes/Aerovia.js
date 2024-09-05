@@ -17,14 +17,21 @@ export class Aerovia {
     this.#tamanho = tamanho;
   }
 
-  //Método que retorna a origem
+  //Métodos que retornam o id, origem, o destino e o tamanho
+  get id() {
+    return this.#id;
+  }
+
   get origem() {
     return this.#origem;
   }
 
-  //Método que retorna o destino
   get destino() {
     return this.#destino;
+  }
+
+  get tamanho() {
+    return this.#tamanho;
   }
 
   //Método que retorna os valores da classe em formato string

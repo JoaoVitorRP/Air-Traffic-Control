@@ -53,4 +53,23 @@ export class ServicoAerovias {
 
     return foundAirways;
   }
+
+  //Método que retorna uma aerovia através de seu id
+  recuperaPorId(id) {
+    validate(id, "string");
+
+    //Transforma os argumentos em caixa alta para evitar erros por digitação
+    id = id.toUpperCase();
+
+    //Itera pelo array #aerovias
+    //Quando acha uma aerovia com esse id, retorna essa entrada
+    for (let aerovia of this.#aerovias) {
+      if (aerovia.id === id) {
+        return aerovia;
+      }
+    }
+
+    //Caso não seja encontrado nenhuma aerovia que coincide com esse id, retorna um erro
+    throw new NotFoundError("Aerovia não encontrada!");
+  }
 }

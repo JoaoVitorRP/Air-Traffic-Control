@@ -20,6 +20,11 @@ export class Piloto {
     return this.#matricula;
   }
 
+  //Método que retorna se a habilitação está ativa
+  get habilitacaoAtiva() {
+    return this.#habilitacaoAtiva;
+  }
+
   //Método que retorna os valores da classe em formato string
   toString() {
     return `    {

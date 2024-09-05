@@ -15,6 +15,19 @@ class Aeronave {
     this.#autonomia = autonomia;
   }
 
+  //Métodos get para obter o prefixo, a velocidade de cruzeiro e a autonomia
+  get prefixo() {
+    return this.#prefixo;
+  }
+
+  get velocidadeCruzeiro() {
+    return this.#velocidadeCruzeiro;
+  }
+
+  get autonomia() {
+    return this.#autonomia;
+  }
+
   //Método que retorna os valores da classe em formato string
   toString() {
     return `      prefixo: ${this.#prefixo},

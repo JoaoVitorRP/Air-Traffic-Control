@@ -1,5 +1,6 @@
 import { AeronavePassageiros, AeronaveCarga, AeronaveParticular } from "./Aeronave.js";
 import { BadRequestError, NotFoundError } from "../errors/index.js";
+import { validate } from "bycontract";
 
 //Classe ServicoAeronaves, responsável pelas funções de serviço
 export class ServicoAeronaves {
@@ -47,6 +48,25 @@ export class ServicoAeronaves {
     this.#aeronaves.push(aeronave);
 
     return true;
+  }
+
+  //Método que retorna uma aeronave através de seu prefixo
+  recupera(prefixo) {
+    validate(prefixo, "string");
+
+    //Transforma os argumentos em caixa alta para evitar erros por digitação
+    prefixo = prefixo.toUpperCase();
+
+    //Itera pelo array #aeronaves
+    //Quando acha uma aeronave com esse prefixo, retorna essa entrada
+    for (let aeronave of this.#aeronaves) {
+      if (aeronave.prefixo === prefixo) {
+        return aeronave;
+      }
+    }
+
+    //Caso não seja encontrado nenhuma aeronave que coincide com esse prefixo, retorna um erro
+    throw new NotFoundError("Aeronave não encontrada!");
   }
 
   //Método que retorna todos os valores do array #aeronaves
